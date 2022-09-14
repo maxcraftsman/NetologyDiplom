@@ -1,0 +1,53 @@
+[2022-09-14 02:28:26,442] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: trip_etl.ssh_task 2022-09-13T00:00:00+00:00 [queued]>
+[2022-09-14 02:28:26,477] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: trip_etl.ssh_task 2022-09-13T00:00:00+00:00 [queued]>
+[2022-09-14 02:28:26,485] {taskinstance.py:1068} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-14 02:28:26,491] {taskinstance.py:1069} INFO - Starting attempt 1 of 1
+[2022-09-14 02:28:26,491] {taskinstance.py:1070} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-14 02:28:26,516] {taskinstance.py:1089} INFO - Executing <Task(SSHOperator): ssh_task> on 2022-09-13T00:00:00+00:00
+[2022-09-14 02:28:26,525] {standard_task_runner.py:52} INFO - Started process 106 to run task
+[2022-09-14 02:28:26,553] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'trip_etl', 'ssh_task', '2022-09-13T00:00:00+00:00', '--job-id', '98', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/clickhouse test.py', '--cfg-path', '/tmp/tmppwhzma8r', '--error-file', '/tmp/tmp5sals37g']
+[2022-09-14 02:28:26,560] {standard_task_runner.py:77} INFO - Job 98: Subtask ssh_task
+[2022-09-14 02:28:26,701] {logging_mixin.py:104} INFO - Running <TaskInstance: trip_etl.ssh_task 2022-09-13T00:00:00+00:00 [running]> on host 3f125d5f6fbd
+[2022-09-14 02:28:26,766] {taskinstance.py:1283} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=trip_etl
+AIRFLOW_CTX_TASK_ID=ssh_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-13T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-13T00:00:00+00:00
+[2022-09-14 02:28:26,767] {ssh.py:91} INFO - ssh_hook is not provided or invalid. Trying ssh_conn_id to create SSHHook.
+[2022-09-14 02:28:26,779] {base.py:78} INFO - Using connection to: id: nfrssh. Host: 172.30.16.1, Port: 22, Schema: , Login: nfrs, Password: XXXXXXXX, extra: XXXXXXXX
+[2022-09-14 02:28:26,779] {ssh.py:204} WARNING - Remote Identification Change is not verified. This wont protect against Man-In-The-Middle attacks
+[2022-09-14 02:28:26,780] {ssh.py:210} WARNING - No Host Key Verification. This wont protect against Man-In-The-Middle attacks
+[2022-09-14 02:28:26,980] {transport.py:1819} INFO - Connected (version 2.0, client OpenSSH_for_Windows_8.1)
+[2022-09-14 02:28:27,258] {transport.py:1819} INFO - Authentication (password) successful!
+[2022-09-14 02:28:27,259] {ssh.py:110} INFO - Running command: cd C:/Users/nfrs/Documents/Jupyter/NetologyDiplom/ && bin.bat
+[2022-09-14 02:28:27,486] {ssh.py:142} INFO - 
+[2022-09-14 02:28:27,487] {ssh.py:142} INFO - nfrs@DESKTOP-FKD5HF9 C:\Users\nfrs\Documents\Jupyter\NetologyDiplom>set root=C:\Users\nfrs\anaconda3 
+
+[2022-09-14 02:28:27,487] {ssh.py:142} INFO - nfrs@DESKTOP-FKD5HF9 C:\Users\nfrs\Documents\Jupyter\NetologyDiplom>call C:\Users\nfrs\anaconda3\Scripts\activate.bat C:\Users\nfrs\anaconda3 
+[2022-09-14 02:28:31,664] {ssh.py:142} INFO - 
+[2022-09-14 02:28:31,665] {ssh.py:142} INFO - (base) nfrs@DESKTOP-FKD5HF9 C:\Users\nfrs\Documents\Jupyter\NetologyDiplom>call python trip_etl.py 
+[2022-09-14 02:28:37,255] {taskinstance.py:1482} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/providers/ssh/operators/ssh.py", line 169, in execute
+    raise AirflowException(f"error running cmd: {self.command}, error: {error_msg}")
+airflow.exceptions.AirflowException: error running cmd: cd C:/Users/nfrs/Documents/Jupyter/NetologyDiplom/ && bin.bat, error: 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1138, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1311, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1341, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/providers/ssh/operators/ssh.py", line 172, in execute
+    raise AirflowException(f"SSH operator error: {str(e)}")
+airflow.exceptions.AirflowException: SSH operator error: error running cmd: cd C:/Users/nfrs/Documents/Jupyter/NetologyDiplom/ && bin.bat, error: 
+[2022-09-14 02:28:38,704] {taskinstance.py:1532} INFO - Marking task as FAILED. dag_id=trip_etl, task_id=ssh_task, execution_date=20220913T000000, start_date=20220914T022826, end_date=20220914T022838
+[2022-09-14 02:28:40,429] {local_task_job.py:188} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2022-09-14 02:28:41,829] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 106
+[2022-09-14 02:28:48,893] {process_utils.py:66} INFO - Process psutil.Process(pid=106, status='terminated', exitcode=1, started='02:28:25') (106) terminated with exit code 1

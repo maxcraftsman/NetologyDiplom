@@ -1,0 +1,880 @@
+[2022-09-12 13:58:15,661] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: trip_etl.ssh_task 2022-09-12T13:58:14.627645+00:00 [queued]>
+[2022-09-12 13:58:15,668] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: trip_etl.ssh_task 2022-09-12T13:58:14.627645+00:00 [queued]>
+[2022-09-12 13:58:15,669] {taskinstance.py:1068} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-12 13:58:15,669] {taskinstance.py:1069} INFO - Starting attempt 1 of 1
+[2022-09-12 13:58:15,669] {taskinstance.py:1070} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-12 13:58:15,679] {taskinstance.py:1089} INFO - Executing <Task(SSHOperator): ssh_task> on 2022-09-12T13:58:14.627645+00:00
+[2022-09-12 13:58:15,686] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'trip_etl', 'ssh_task', '2022-09-12T13:58:14.627645+00:00', '--job-id', '96', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/clickhouse test.py', '--cfg-path', '/tmp/tmpnzdnklaq', '--error-file', '/tmp/tmpuulkg9hd']
+[2022-09-12 13:58:15,683] {standard_task_runner.py:52} INFO - Started process 98 to run task
+[2022-09-12 13:58:15,687] {standard_task_runner.py:77} INFO - Job 96: Subtask ssh_task
+[2022-09-12 13:58:15,791] {logging_mixin.py:104} INFO - Running <TaskInstance: trip_etl.ssh_task 2022-09-12T13:58:14.627645+00:00 [running]> on host 3f125d5f6fbd
+[2022-09-12 13:58:15,825] {taskinstance.py:1283} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=trip_etl
+AIRFLOW_CTX_TASK_ID=ssh_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-12T13:58:14.627645+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-09-12T13:58:14.627645+00:00
+[2022-09-12 13:58:15,826] {ssh.py:91} INFO - ssh_hook is not provided or invalid. Trying ssh_conn_id to create SSHHook.
+[2022-09-12 13:58:15,832] {base.py:78} INFO - Using connection to: id: nfrssh. Host: 172.30.16.1, Port: 22, Schema: , Login: nfrs, Password: XXXXXXXX, extra: XXXXXXXX
+[2022-09-12 13:58:15,833] {ssh.py:204} WARNING - Remote Identification Change is not verified. This wont protect against Man-In-The-Middle attacks
+[2022-09-12 13:58:15,833] {ssh.py:210} WARNING - No Host Key Verification. This wont protect against Man-In-The-Middle attacks
+[2022-09-12 13:58:15,896] {transport.py:1819} INFO - Connected (version 2.0, client OpenSSH_for_Windows_8.1)
+[2022-09-12 13:58:15,997] {transport.py:1819} INFO - Authentication (password) successful!
+[2022-09-12 13:58:15,998] {ssh.py:110} INFO - Running command: cd C:/Users/nfrs/Documents/Jupyter/NetologyDiplom/ && bin.bat
+[2022-09-12 13:58:16,081] {ssh.py:142} INFO - 
+nfrs@DESKTOP-FKD5HF9 C:\Users\nfrs\Documents\Jupyter\NetologyDiplom>set root=C:\Users\nfrs\anaconda3 
+
+[2022-09-12 13:58:16,081] {ssh.py:142} INFO - nfrs@DESKTOP-FKD5HF9 C:\Users\nfrs\Documents\Jupyter\NetologyDiplom>call C:\Users\nfrs\anaconda3\Scripts\activate.bat C:\Users\nfrs\anaconda3 
+[2022-09-12 13:58:17,384] {ssh.py:142} INFO - 
+[2022-09-12 13:58:17,385] {ssh.py:142} INFO - (base) nfrs@DESKTOP-FKD5HF9 C:\Users\nfrs\Documents\Jupyter\NetologyDiplom>call python trip_etl.py 
+[2022-09-12 13:58:22,913] {ssh.py:146} WARNING - 2022-09-12 22:58:22.912 | INFO     | __main__:<module>:101 - Сравнение таблицы исходника с актуальной версией
+[2022-09-12 13:58:22,914] {ssh.py:146} WARNING - 2022-09-12 22:58:22.912 | INFO     | __main__:<module>:103 - Таблица загрузчика существует.
+[2022-09-12 13:58:22,952] {ssh.py:146} WARNING - 2022-09-12 22:58:22.944 | INFO     | __main__:<module>:115 - Изменений нет.
+[2022-09-12 13:58:25,640] {ssh.py:146} WARNING - 2022-09-12 22:58:25.639 | INFO     | __main__:<module>:287 - Файл существует: 201306-citibike-tripdata.zip
+[2022-09-12 13:58:25,643] {ssh.py:146} WARNING - 2022-09-12 22:58:25.641 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201306-citibike-tripdata.csv
+2022-09-12 22:58:25.642 | INFO     | __main__:zip_extractor:196 - 201306-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.642 | INFO     | __main__:zip_extractor:196 - __MACOSX/ файл разархивирован
+[2022-09-12 13:58:25,643] {ssh.py:146} WARNING - 2022-09-12 22:58:25.642 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._201306-citibike-tripdata.csv
+2022-09-12 22:58:25.642 | INFO     | __main__:zip_extractor:196 - __MACOSX/._201306-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,645] {ssh.py:146} WARNING - 2022-09-12 22:58:25.642 | INFO     | __main__:<module>:287 - Файл существует: 201307-201402-citibike-tripdata.zip
+2022-09-12 22:58:25.643 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2014-02 - Citi Bike trip data.csv
+2022-09-12 22:58:25.644 | INFO     | __main__:zip_extractor:196 - 2014-02 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.644 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2014-01 - Citi Bike trip data.csv
+2022-09-12 22:58:25.644 | INFO     | __main__:zip_extractor:196 - 2014-01 - Citi Bike trip data.csv файл разархивирован
+[2022-09-12 13:58:25,647] {ssh.py:146} WARNING - 2022-09-12 22:58:25.644 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2013-12 - Citi Bike trip data.csv
+2022-09-12 22:58:25.644 | INFO     | __main__:zip_extractor:196 - 2013-12 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.644 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2013-11 - Citi Bike trip data.csv
+2022-09-12 22:58:25.644 | INFO     | __main__:zip_extractor:196 - 2013-11 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.645 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2013-10 - Citi Bike trip data.csv
+2022-09-12 22:58:25.645 | INFO     | __main__:zip_extractor:196 - 2013-10 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.645 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2013-09 - Citi Bike trip data.csv
+[2022-09-12 13:58:25,648] {ssh.py:146} WARNING - 2022-09-12 22:58:25.646 | INFO     | __main__:zip_extractor:196 - 2013-09 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.646 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2013-08 - Citi Bike trip data.csv
+2022-09-12 22:58:25.646 | INFO     | __main__:zip_extractor:196 - 2013-08 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.646 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2013-07 - Citi Bike trip data.csv
+2022-09-12 22:58:25.646 | INFO     | __main__:zip_extractor:196 - 2013-07 - Citi Bike trip data.csv файл разархивирован
+[2022-09-12 13:58:25,648] {ssh.py:146} WARNING - 2022-09-12 22:58:25.646 | INFO     | __main__:<module>:287 - Файл существует: 201307-citibike-tripdata.zip
+[2022-09-12 13:58:25,656] {ssh.py:146} WARNING - 2022-09-12 22:58:25.647 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2013-07 - Citi Bike trip data.csv
+2022-09-12 22:58:25.647 | INFO     | __main__:zip_extractor:196 - 2013-07 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.648 | INFO     | __main__:<module>:287 - Файл существует: 201308-citibike-tripdata.zip
+2022-09-12 22:58:25.648 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2013-08 - Citi Bike trip data.csv
+2022-09-12 22:58:25.648 | INFO     | __main__:zip_extractor:196 - 2013-08 - Citi Bike trip data.csv файл разархивирован
+[2022-09-12 13:58:25,658] {ssh.py:146} WARNING - 2022-09-12 22:58:25.648 | INFO     | __main__:<module>:287 - Файл существует: 201309-citibike-tripdata.zip
+2022-09-12 22:58:25.649 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2013-09 - Citi Bike trip data.csv
+2022-09-12 22:58:25.649 | INFO     | __main__:zip_extractor:196 - 2013-09 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.649 | INFO     | __main__:<module>:287 - Файл существует: 201310-citibike-tripdata.zip
+2022-09-12 22:58:25.650 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2013-10 - Citi Bike trip data.csv
+2022-09-12 22:58:25.650 | INFO     | __main__:zip_extractor:196 - 2013-10 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.650 | INFO     | __main__:<module>:287 - Файл существует: 201311-citibike-tripdata.zip
+2022-09-12 22:58:25.651 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2013-11 - Citi Bike trip data.csv
+2022-09-12 22:58:25.651 | INFO     | __main__:zip_extractor:196 - 2013-11 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.651 | INFO     | __main__:<module>:287 - Файл существует: 201312-citibike-tripdata.zip
+2022-09-12 22:58:25.651 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2013-12 - Citi Bike trip data.csv
+[2022-09-12 13:58:25,659] {ssh.py:146} WARNING - 2022-09-12 22:58:25.652 | INFO     | __main__:zip_extractor:196 - 2013-12 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.652 | INFO     | __main__:<module>:287 - Файл существует: 201401-citibike-tripdata.zip
+2022-09-12 22:58:25.652 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2014-01 - Citi Bike trip data.csv
+[2022-09-12 13:58:25,660] {ssh.py:146} WARNING - 2022-09-12 22:58:25.652 | INFO     | __main__:zip_extractor:196 - 2014-01 - Citi Bike trip data.csv файл разархивирован
+[2022-09-12 13:58:25,662] {ssh.py:146} WARNING - 2022-09-12 22:58:25.653 | INFO     | __main__:<module>:287 - Файл существует: 201402-citibike-tripdata.zip
+2022-09-12 22:58:25.653 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2014-02 - Citi Bike trip data.csv
+2022-09-12 22:58:25.653 | INFO     | __main__:zip_extractor:196 - 2014-02 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.653 | INFO     | __main__:<module>:287 - Файл существует: 201403-citibike-tripdata.zip
+2022-09-12 22:58:25.654 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2014-03 - Citi Bike trip data.csv
+2022-09-12 22:58:25.654 | INFO     | __main__:zip_extractor:196 - 2014-03 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.655 | INFO     | __main__:<module>:287 - Файл существует: 201404-citibike-tripdata.zip
+2022-09-12 22:58:25.655 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2014-04 - Citi Bike trip data.csv
+2022-09-12 22:58:25.655 | INFO     | __main__:zip_extractor:196 - 2014-04 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.656 | INFO     | __main__:<module>:287 - Файл существует: 201405-citibike-tripdata.zip
+2022-09-12 22:58:25.656 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2014-05 - Citi Bike trip data.csv
+2022-09-12 22:58:25.657 | INFO     | __main__:zip_extractor:196 - 2014-05 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.657 | INFO     | __main__:<module>:287 - Файл существует: 201406-citibike-tripdata.zip
+2022-09-12 22:58:25.657 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2014-06 - Citi Bike trip data.csv
+[2022-09-12 13:58:25,665] {ssh.py:146} WARNING - 2022-09-12 22:58:25.658 | INFO     | __main__:zip_extractor:196 - 2014-06 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.658 | INFO     | __main__:<module>:287 - Файл существует: 201407-citibike-tripdata.zip
+2022-09-12 22:58:25.659 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2014-07 - Citi Bike trip data.csv
+2022-09-12 22:58:25.659 | INFO     | __main__:zip_extractor:196 - 2014-07 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.659 | INFO     | __main__:<module>:287 - Файл существует: 201408-citibike-tripdata.zip
+2022-09-12 22:58:25.660 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 2014-08 - Citi Bike trip data.csv
+2022-09-12 22:58:25.660 | INFO     | __main__:zip_extractor:196 - 2014-08 - Citi Bike trip data.csv файл разархивирован
+2022-09-12 22:58:25.660 | INFO     | __main__:<module>:287 - Файл существует: 201409-citibike-tripdata.zip
+2022-09-12 22:58:25.661 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201409-citibike-tripdata.csv
+2022-09-12 22:58:25.661 | INFO     | __main__:zip_extractor:196 - 201409-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.662 | INFO     | __main__:<module>:287 - Файл существует: 201410-citibike-tripdata.zip
+2022-09-12 22:58:25.663 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201410-citibike-tripdata.csv
+[2022-09-12 13:58:25,666] {ssh.py:146} WARNING - 2022-09-12 22:58:25.663 | INFO     | __main__:zip_extractor:196 - 201410-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.663 | INFO     | __main__:<module>:287 - Файл существует: 201411-citibike-tripdata.zip
+2022-09-12 22:58:25.664 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201411-citibike-tripdata.csv
+2022-09-12 22:58:25.664 | INFO     | __main__:zip_extractor:196 - 201411-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.664 | INFO     | __main__:<module>:287 - Файл существует: 201412-citibike-tripdata.zip
+[2022-09-12 13:58:25,666] {ssh.py:146} WARNING - 2022-09-12 22:58:25.665 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201412-citibike-tripdata.csv
+2022-09-12 22:58:25.665 | INFO     | __main__:zip_extractor:196 - 201412-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,667] {ssh.py:146} WARNING - 2022-09-12 22:58:25.666 | INFO     | __main__:<module>:287 - Файл существует: 201501-citibike-tripdata.zip
+2022-09-12 22:58:25.666 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201501-citibike-tripdata.csv
+2022-09-12 22:58:25.666 | INFO     | __main__:zip_extractor:196 - 201501-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.667 | INFO     | __main__:<module>:287 - Файл существует: 201502-citibike-tripdata.zip
+[2022-09-12 13:58:25,668] {ssh.py:146} WARNING - 2022-09-12 22:58:25.668 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201502-citibike-tripdata.csv
+2022-09-12 22:58:25.668 | INFO     | __main__:zip_extractor:196 - 201502-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,669] {ssh.py:146} WARNING - 2022-09-12 22:58:25.668 | INFO     | __main__:<module>:287 - Файл существует: 201503-citibike-tripdata.zip
+[2022-09-12 13:58:25,669] {ssh.py:146} WARNING - 2022-09-12 22:58:25.669 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201503-citibike-tripdata.csv
+[2022-09-12 13:58:25,670] {ssh.py:146} WARNING - 2022-09-12 22:58:25.669 | INFO     | __main__:zip_extractor:196 - 201503-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,670] {ssh.py:146} WARNING - 2022-09-12 22:58:25.669 | INFO     | __main__:<module>:287 - Файл существует: 201504-citibike-tripdata.zip
+2022-09-12 22:58:25.670 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201504-citibike-tripdata.csv
+[2022-09-12 13:58:25,671] {ssh.py:146} WARNING - 2022-09-12 22:58:25.670 | INFO     | __main__:zip_extractor:196 - 201504-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,671] {ssh.py:146} WARNING - 2022-09-12 22:58:25.670 | INFO     | __main__:<module>:287 - Файл существует: 201505-citibike-tripdata.zip
+[2022-09-12 13:58:25,672] {ssh.py:146} WARNING - 2022-09-12 22:58:25.671 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201505-citibike-tripdata.csv
+[2022-09-12 13:58:25,673] {ssh.py:146} WARNING - 2022-09-12 22:58:25.672 | INFO     | __main__:zip_extractor:196 - 201505-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,674] {ssh.py:146} WARNING - 2022-09-12 22:58:25.672 | INFO     | __main__:<module>:287 - Файл существует: 201506-citibike-tripdata.zip
+2022-09-12 22:58:25.673 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201506-citibike-tripdata.csv
+2022-09-12 22:58:25.673 | INFO     | __main__:zip_extractor:196 - 201506-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,674] {ssh.py:146} WARNING - 2022-09-12 22:58:25.673 | INFO     | __main__:<module>:287 - Файл существует: 201507-citibike-tripdata.zip
+[2022-09-12 13:58:25,675] {ssh.py:146} WARNING - 2022-09-12 22:58:25.674 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201507-citibike-tripdata.csv
+[2022-09-12 13:58:25,675] {ssh.py:146} WARNING - 2022-09-12 22:58:25.674 | INFO     | __main__:zip_extractor:196 - 201507-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,676] {ssh.py:146} WARNING - 2022-09-12 22:58:25.675 | INFO     | __main__:<module>:287 - Файл существует: 201508-citibike-tripdata.zip
+[2022-09-12 13:58:25,676] {ssh.py:146} WARNING - 2022-09-12 22:58:25.676 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201508-citibike-tripdata.csv
+[2022-09-12 13:58:25,676] {ssh.py:146} WARNING - 2022-09-12 22:58:25.676 | INFO     | __main__:zip_extractor:196 - 201508-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,677] {ssh.py:146} WARNING - 2022-09-12 22:58:25.676 | INFO     | __main__:<module>:287 - Файл существует: 201509-citibike-tripdata.zip
+2022-09-12 22:58:25.677 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201509-citibike-tripdata.csv
+[2022-09-12 13:58:25,678] {ssh.py:146} WARNING - 2022-09-12 22:58:25.677 | INFO     | __main__:zip_extractor:196 - 201509-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,679] {ssh.py:146} WARNING - 2022-09-12 22:58:25.677 | INFO     | __main__:<module>:287 - Файл существует: 201510-citibike-tripdata.zip
+2022-09-12 22:58:25.678 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201510-citibike-tripdata.csv
+2022-09-12 22:58:25.678 | INFO     | __main__:zip_extractor:196 - 201510-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,680] {ssh.py:146} WARNING - 2022-09-12 22:58:25.679 | INFO     | __main__:<module>:287 - Файл существует: 201511-citibike-tripdata.zip
+2022-09-12 22:58:25.679 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201511-citibike-tripdata.csv
+[2022-09-12 13:58:25,680] {ssh.py:146} WARNING - 2022-09-12 22:58:25.679 | INFO     | __main__:zip_extractor:196 - 201511-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,680] {ssh.py:146} WARNING - 2022-09-12 22:58:25.680 | INFO     | __main__:<module>:287 - Файл существует: 201512-citibike-tripdata.zip
+[2022-09-12 13:58:25,681] {ssh.py:146} WARNING - 2022-09-12 22:58:25.681 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201512-citibike-tripdata.csv
+2022-09-12 22:58:25.681 | INFO     | __main__:zip_extractor:196 - 201512-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.681 | INFO     | __main__:<module>:287 - Файл существует: 201601-citibike-tripdata.zip
+[2022-09-12 13:58:25,682] {ssh.py:146} WARNING - 2022-09-12 22:58:25.682 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201601-citibike-tripdata.csv
+[2022-09-12 13:58:25,682] {ssh.py:146} WARNING - 2022-09-12 22:58:25.682 | INFO     | __main__:zip_extractor:196 - 201601-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,683] {ssh.py:146} WARNING - 2022-09-12 22:58:25.682 | INFO     | __main__:<module>:287 - Файл существует: 201602-citibike-tripdata.zip
+[2022-09-12 13:58:25,683] {ssh.py:146} WARNING - 2022-09-12 22:58:25.683 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201602-citibike-tripdata.csv
+[2022-09-12 13:58:25,683] {ssh.py:146} WARNING - 2022-09-12 22:58:25.683 | INFO     | __main__:zip_extractor:196 - 201602-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,684] {ssh.py:146} WARNING - 2022-09-12 22:58:25.683 | INFO     | __main__:<module>:287 - Файл существует: 201603-citibike-tripdata.zip
+[2022-09-12 13:58:25,684] {ssh.py:146} WARNING - 2022-09-12 22:58:25.684 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201603-citibike-tripdata.csv
+[2022-09-12 13:58:25,685] {ssh.py:146} WARNING - 2022-09-12 22:58:25.684 | INFO     | __main__:zip_extractor:196 - 201603-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.684 | INFO     | __main__:<module>:287 - Файл существует: 201604-citibike-tripdata.zip
+[2022-09-12 13:58:25,685] {ssh.py:146} WARNING - 2022-09-12 22:58:25.685 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201604-citibike-tripdata.csv
+2022-09-12 22:58:25.685 | INFO     | __main__:zip_extractor:196 - 201604-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,685] {ssh.py:146} WARNING - 2022-09-12 22:58:25.685 | INFO     | __main__:<module>:287 - Файл существует: 201605-citibike-tripdata.zip
+[2022-09-12 13:58:25,686] {ssh.py:146} WARNING - 2022-09-12 22:58:25.686 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201605-citibike-tripdata.csv
+[2022-09-12 13:58:25,686] {ssh.py:146} WARNING - 2022-09-12 22:58:25.686 | INFO     | __main__:zip_extractor:196 - 201605-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,687] {ssh.py:146} WARNING - 2022-09-12 22:58:25.686 | INFO     | __main__:<module>:287 - Файл существует: 201606-citibike-tripdata.zip
+2022-09-12 22:58:25.687 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201606-citibike-tripdata.csv
+2022-09-12 22:58:25.687 | INFO     | __main__:zip_extractor:196 - 201606-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,688] {ssh.py:146} WARNING - 2022-09-12 22:58:25.687 | INFO     | __main__:<module>:287 - Файл существует: 201607-citibike-tripdata.zip
+[2022-09-12 13:58:25,688] {ssh.py:146} WARNING - 2022-09-12 22:58:25.688 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201607-citibike-tripdata.csv
+[2022-09-12 13:58:25,689] {ssh.py:146} WARNING - 2022-09-12 22:58:25.688 | INFO     | __main__:zip_extractor:196 - 201607-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,689] {ssh.py:146} WARNING - 2022-09-12 22:58:25.688 | INFO     | __main__:<module>:287 - Файл существует: 201608-citibike-tripdata.zip
+[2022-09-12 13:58:25,690] {ssh.py:146} WARNING - 2022-09-12 22:58:25.689 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201608-citibike-tripdata.csv
+[2022-09-12 13:58:25,690] {ssh.py:146} WARNING - 2022-09-12 22:58:25.690 | INFO     | __main__:zip_extractor:196 - 201608-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,690] {ssh.py:146} WARNING - 2022-09-12 22:58:25.690 | INFO     | __main__:<module>:287 - Файл существует: 201609-citibike-tripdata.zip
+[2022-09-12 13:58:25,691] {ssh.py:146} WARNING - 2022-09-12 22:58:25.691 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201609-citibike-tripdata.csv
+[2022-09-12 13:58:25,692] {ssh.py:146} WARNING - 2022-09-12 22:58:25.691 | INFO     | __main__:zip_extractor:196 - 201609-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,692] {ssh.py:146} WARNING - 2022-09-12 22:58:25.692 | INFO     | __main__:<module>:287 - Файл существует: 201610-citibike-tripdata.zip
+[2022-09-12 13:58:25,693] {ssh.py:146} WARNING - 2022-09-12 22:58:25.692 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201610-citibike-tripdata.csv
+2022-09-12 22:58:25.692 | INFO     | __main__:zip_extractor:196 - 201610-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,693] {ssh.py:146} WARNING - 2022-09-12 22:58:25.693 | INFO     | __main__:<module>:287 - Файл существует: 201611-citibike-tripdata.zip
+[2022-09-12 13:58:25,694] {ssh.py:146} WARNING - 2022-09-12 22:58:25.693 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201611-citibike-tripdata.csv
+[2022-09-12 13:58:25,694] {ssh.py:146} WARNING - 2022-09-12 22:58:25.693 | INFO     | __main__:zip_extractor:196 - 201611-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,695] {ssh.py:146} WARNING - 2022-09-12 22:58:25.694 | INFO     | __main__:<module>:287 - Файл существует: 201612-citibike-tripdata.zip
+[2022-09-12 13:58:25,696] {ssh.py:146} WARNING - 2022-09-12 22:58:25.694 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201612-citibike-tripdata.csv
+2022-09-12 22:58:25.695 | INFO     | __main__:zip_extractor:196 - 201612-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,696] {ssh.py:146} WARNING - 2022-09-12 22:58:25.695 | INFO     | __main__:<module>:287 - Файл существует: 201701-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,696] {ssh.py:146} WARNING - 2022-09-12 22:58:25.696 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201701-citibike-tripdata.csv
+[2022-09-12 13:58:25,697] {ssh.py:146} WARNING - 2022-09-12 22:58:25.696 | INFO     | __main__:zip_extractor:196 - 201701-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,697] {ssh.py:146} WARNING - 2022-09-12 22:58:25.697 | INFO     | __main__:<module>:287 - Файл существует: 201702-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,698] {ssh.py:146} WARNING - 2022-09-12 22:58:25.698 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201702-citibike-tripdata.csv
+[2022-09-12 13:58:25,698] {ssh.py:146} WARNING - 2022-09-12 22:58:25.698 | INFO     | __main__:zip_extractor:196 - 201702-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,699] {ssh.py:146} WARNING - 2022-09-12 22:58:25.699 | INFO     | __main__:<module>:287 - Файл существует: 201703-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,699] {ssh.py:146} WARNING - 2022-09-12 22:58:25.699 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201703-citibike-tripdata.csv
+[2022-09-12 13:58:25,699] {ssh.py:146} WARNING - 2022-09-12 22:58:25.699 | INFO     | __main__:zip_extractor:196 - 201703-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,700] {ssh.py:146} WARNING - 2022-09-12 22:58:25.700 | INFO     | __main__:<module>:287 - Файл существует: 201704-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,700] {ssh.py:146} WARNING - 2022-09-12 22:58:25.700 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201704-citibike-tripdata.csv
+2022-09-12 22:58:25.700 | INFO     | __main__:zip_extractor:196 - 201704-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,701] {ssh.py:146} WARNING - 2022-09-12 22:58:25.701 | INFO     | __main__:<module>:287 - Файл существует: 201705-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,701] {ssh.py:146} WARNING - 2022-09-12 22:58:25.701 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201705-citibike-tripdata.csv
+[2022-09-12 13:58:25,701] {ssh.py:146} WARNING - 2022-09-12 22:58:25.701 | INFO     | __main__:zip_extractor:196 - 201705-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,702] {ssh.py:146} WARNING - 2022-09-12 22:58:25.701 | INFO     | __main__:<module>:287 - Файл существует: 201706-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,702] {ssh.py:146} WARNING - 2022-09-12 22:58:25.702 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201706-citibike-tripdata.csv
+[2022-09-12 13:58:25,702] {ssh.py:146} WARNING - 2022-09-12 22:58:25.702 | INFO     | __main__:zip_extractor:196 - 201706-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,703] {ssh.py:146} WARNING - 2022-09-12 22:58:25.702 | INFO     | __main__:<module>:287 - Файл существует: 201707-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,705] {ssh.py:146} WARNING - 2022-09-12 22:58:25.703 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201707-citibike-tripdata.csv
+2022-09-12 22:58:25.703 | INFO     | __main__:zip_extractor:196 - 201707-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.703 | INFO     | __main__:<module>:287 - Файл существует: 201708-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.704 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201708-citibike-tripdata.csv
+2022-09-12 22:58:25.704 | INFO     | __main__:zip_extractor:196 - 201708-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,705] {ssh.py:146} WARNING - 2022-09-12 22:58:25.704 | INFO     | __main__:<module>:287 - Файл существует: 201709-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.705 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201709-citibike-tripdata.csv
+2022-09-12 22:58:25.705 | INFO     | __main__:zip_extractor:196 - 201709-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,706] {ssh.py:146} WARNING - 2022-09-12 22:58:25.705 | INFO     | __main__:<module>:287 - Файл существует: 201710-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,707] {ssh.py:146} WARNING - 2022-09-12 22:58:25.706 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201710-citibike-tripdata.csv
+[2022-09-12 13:58:25,708] {ssh.py:146} WARNING - 2022-09-12 22:58:25.706 | INFO     | __main__:zip_extractor:196 - 201710-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.706 | INFO     | __main__:<module>:287 - Файл существует: 201711-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.708 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201711-citibike-tripdata.csv
+[2022-09-12 13:58:25,709] {ssh.py:146} WARNING - 2022-09-12 22:58:25.708 | INFO     | __main__:zip_extractor:196 - 201711-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.708 | INFO     | __main__:<module>:287 - Файл существует: 201712-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,709] {ssh.py:146} WARNING - 2022-09-12 22:58:25.709 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201712-citibike-tripdata.csv
+2022-09-12 22:58:25.709 | INFO     | __main__:zip_extractor:196 - 201712-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,710] {ssh.py:146} WARNING - 2022-09-12 22:58:25.710 | INFO     | __main__:<module>:287 - Файл существует: 201801-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,711] {ssh.py:146} WARNING - 2022-09-12 22:58:25.710 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201801-citibike-tripdata.csv
+[2022-09-12 13:58:25,711] {ssh.py:146} WARNING - 2022-09-12 22:58:25.710 | INFO     | __main__:zip_extractor:196 - 201801-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,712] {ssh.py:146} WARNING - 2022-09-12 22:58:25.711 | INFO     | __main__:<module>:287 - Файл существует: 201802-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,713] {ssh.py:146} WARNING - 2022-09-12 22:58:25.712 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201802-citibike-tripdata.csv
+[2022-09-12 13:58:25,713] {ssh.py:146} WARNING - 2022-09-12 22:58:25.712 | INFO     | __main__:zip_extractor:196 - 201802-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.712 | INFO     | __main__:<module>:287 - Файл существует: 201803-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,714] {ssh.py:146} WARNING - 2022-09-12 22:58:25.713 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201803-citibike-tripdata.csv
+2022-09-12 22:58:25.713 | INFO     | __main__:zip_extractor:196 - 201803-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,715] {ssh.py:146} WARNING - 2022-09-12 22:58:25.713 | INFO     | __main__:<module>:287 - Файл существует: 201804-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.714 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201804-citibike-tripdata.csv
+2022-09-12 22:58:25.714 | INFO     | __main__:zip_extractor:196 - 201804-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,715] {ssh.py:146} WARNING - 2022-09-12 22:58:25.715 | INFO     | __main__:<module>:287 - Файл существует: 201805-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,716] {ssh.py:146} WARNING - 2022-09-12 22:58:25.716 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201805-citibike-tripdata.csv
+[2022-09-12 13:58:25,716] {ssh.py:146} WARNING - 2022-09-12 22:58:25.716 | INFO     | __main__:zip_extractor:196 - 201805-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,717] {ssh.py:146} WARNING - 2022-09-12 22:58:25.717 | INFO     | __main__:<module>:287 - Файл существует: 201806-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,717] {ssh.py:146} WARNING - 2022-09-12 22:58:25.717 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201806-citibike-tripdata.csv
+[2022-09-12 13:58:25,717] {ssh.py:146} WARNING - 2022-09-12 22:58:25.717 | INFO     | __main__:zip_extractor:196 - 201806-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,718] {ssh.py:146} WARNING - 2022-09-12 22:58:25.718 | INFO     | __main__:<module>:287 - Файл существует: 201807-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,718] {ssh.py:146} WARNING - 2022-09-12 22:58:25.718 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201807-citibike-tripdata.csv
+[2022-09-12 13:58:25,719] {ssh.py:146} WARNING - 2022-09-12 22:58:25.718 | INFO     | __main__:zip_extractor:196 - 201807-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,719] {ssh.py:146} WARNING - 2022-09-12 22:58:25.719 | INFO     | __main__:<module>:287 - Файл существует: 201808-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,719] {ssh.py:146} WARNING - 2022-09-12 22:58:25.719 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201808-citibike-tripdata.csv
+[2022-09-12 13:58:25,720] {ssh.py:146} WARNING - 2022-09-12 22:58:25.719 | INFO     | __main__:zip_extractor:196 - 201808-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,721] {ssh.py:146} WARNING - 2022-09-12 22:58:25.720 | INFO     | __main__:<module>:287 - Файл существует: 201809-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.720 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201809-citibike-tripdata.csv
+2022-09-12 22:58:25.720 | INFO     | __main__:zip_extractor:196 - 201809-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,721] {ssh.py:146} WARNING - 2022-09-12 22:58:25.720 | INFO     | __main__:<module>:287 - Файл существует: 201810-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,722] {ssh.py:146} WARNING - 2022-09-12 22:58:25.721 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201810-citibike-tripdata.csv
+2022-09-12 22:58:25.721 | INFO     | __main__:zip_extractor:196 - 201810-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,723] {ssh.py:146} WARNING - 2022-09-12 22:58:25.721 | INFO     | __main__:<module>:287 - Файл существует: 201811-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.722 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201811-citibike-tripdata.csv
+[2022-09-12 13:58:25,723] {ssh.py:146} WARNING - 2022-09-12 22:58:25.722 | INFO     | __main__:zip_extractor:196 - 201811-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,723] {ssh.py:146} WARNING - 2022-09-12 22:58:25.723 | INFO     | __main__:<module>:287 - Файл существует: 201812-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,724] {ssh.py:146} WARNING - 2022-09-12 22:58:25.723 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201812-citibike-tripdata.csv
+[2022-09-12 13:58:25,724] {ssh.py:146} WARNING - 2022-09-12 22:58:25.724 | INFO     | __main__:zip_extractor:196 - 201812-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,725] {ssh.py:146} WARNING - 2022-09-12 22:58:25.724 | INFO     | __main__:<module>:287 - Файл существует: 201901-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,726] {ssh.py:146} WARNING - 2022-09-12 22:58:25.725 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201901-citibike-tripdata.csv
+[2022-09-12 13:58:25,727] {ssh.py:146} WARNING - 2022-09-12 22:58:25.725 | INFO     | __main__:zip_extractor:196 - 201901-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,728] {ssh.py:146} WARNING - 2022-09-12 22:58:25.726 | INFO     | __main__:<module>:287 - Файл существует: 201902-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.726 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201902-citibike-tripdata.csv
+2022-09-12 22:58:25.726 | INFO     | __main__:zip_extractor:196 - 201902-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.727 | INFO     | __main__:zip_extractor:196 - __MACOSX/ файл разархивирован
+2022-09-12 22:58:25.727 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._201902-citibike-tripdata.csv
+2022-09-12 22:58:25.727 | INFO     | __main__:zip_extractor:196 - __MACOSX/._201902-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,729] {ssh.py:146} WARNING - 2022-09-12 22:58:25.727 | INFO     | __main__:<module>:287 - Файл существует: 201903-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.728 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201903-citibike-tripdata.csv
+[2022-09-12 13:58:25,729] {ssh.py:146} WARNING - 2022-09-12 22:58:25.728 | INFO     | __main__:zip_extractor:196 - 201903-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,730] {ssh.py:146} WARNING - 2022-09-12 22:58:25.729 | INFO     | __main__:<module>:287 - Файл существует: 201904-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,731] {ssh.py:146} WARNING - 2022-09-12 22:58:25.729 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201904-citibike-tripdata.csv
+2022-09-12 22:58:25.729 | INFO     | __main__:zip_extractor:196 - 201904-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,731] {ssh.py:146} WARNING - 2022-09-12 22:58:25.730 | INFO     | __main__:<module>:287 - Файл существует: 201905-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,733] {ssh.py:146} WARNING - 2022-09-12 22:58:25.730 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201905-citibike-tripdata.csv
+2022-09-12 22:58:25.731 | INFO     | __main__:zip_extractor:196 - 201905-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,734] {ssh.py:146} WARNING - 2022-09-12 22:58:25.731 | INFO     | __main__:<module>:287 - Файл существует: 201906-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,734] {ssh.py:146} WARNING - 2022-09-12 22:58:25.732 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201906-citibike-tripdata.csv
+2022-09-12 22:58:25.732 | INFO     | __main__:zip_extractor:196 - 201906-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,735] {ssh.py:146} WARNING - 2022-09-12 22:58:25.732 | INFO     | __main__:<module>:287 - Файл существует: 201907-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.733 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201907-citibike-tripdata.csv
+2022-09-12 22:58:25.733 | INFO     | __main__:zip_extractor:196 - 201907-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.734 | INFO     | __main__:<module>:287 - Файл существует: 201908-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,736] {ssh.py:146} WARNING - 2022-09-12 22:58:25.734 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201908-citibike-tripdata.csv
+[2022-09-12 13:58:25,737] {ssh.py:146} WARNING - 2022-09-12 22:58:25.734 | INFO     | __main__:zip_extractor:196 - 201908-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.735 | INFO     | __main__:<module>:287 - Файл существует: 201909-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.735 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201909-citibike-tripdata.csv
+2022-09-12 22:58:25.735 | INFO     | __main__:zip_extractor:196 - 201909-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.736 | INFO     | __main__:<module>:287 - Файл существует: 201910-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,738] {ssh.py:146} WARNING - 2022-09-12 22:58:25.736 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201910-citibike-tripdata.csv
+2022-09-12 22:58:25.736 | INFO     | __main__:zip_extractor:196 - 201910-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.737 | INFO     | __main__:<module>:287 - Файл существует: 201911-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.737 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201911-citibike-tripdata.csv
+[2022-09-12 13:58:25,739] {ssh.py:146} WARNING - 2022-09-12 22:58:25.737 | INFO     | __main__:zip_extractor:196 - 201911-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.737 | INFO     | __main__:<module>:287 - Файл существует: 201912-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.738 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 201912-citibike-tripdata.csv
+2022-09-12 22:58:25.738 | INFO     | __main__:zip_extractor:196 - 201912-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,739] {ssh.py:146} WARNING - 2022-09-12 22:58:25.738 | INFO     | __main__:<module>:287 - Файл существует: 202001-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,740] {ssh.py:146} WARNING - 2022-09-12 22:58:25.739 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202001-citibike-tripdata.csv
+2022-09-12 22:58:25.739 | INFO     | __main__:zip_extractor:196 - 202001-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,741] {ssh.py:146} WARNING - 2022-09-12 22:58:25.740 | INFO     | __main__:<module>:287 - Файл существует: 202002-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.740 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202002-citibike-tripdata.csv
+[2022-09-12 13:58:25,741] {ssh.py:146} WARNING - 2022-09-12 22:58:25.741 | INFO     | __main__:zip_extractor:196 - 202002-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,742] {ssh.py:146} WARNING - 2022-09-12 22:58:25.741 | INFO     | __main__:<module>:287 - Файл существует: 202003-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,742] {ssh.py:146} WARNING - 2022-09-12 22:58:25.742 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202003-citibike-tripdata.csv
+[2022-09-12 13:58:25,743] {ssh.py:146} WARNING - 2022-09-12 22:58:25.742 | INFO     | __main__:zip_extractor:196 - 202003-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.742 | INFO     | __main__:<module>:287 - Файл существует: 202004-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,744] {ssh.py:146} WARNING - 2022-09-12 22:58:25.743 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202004-citibike-tripdata.csv
+[2022-09-12 13:58:25,745] {ssh.py:146} WARNING - 2022-09-12 22:58:25.743 | INFO     | __main__:zip_extractor:196 - 202004-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.744 | INFO     | __main__:<module>:287 - Файл существует: 202005-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.745 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202005-citibike-tripdata.csv
+2022-09-12 22:58:25.745 | INFO     | __main__:zip_extractor:196 - 202005-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,746] {ssh.py:146} WARNING - 2022-09-12 22:58:25.745 | INFO     | __main__:<module>:287 - Файл существует: 202006-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,747] {ssh.py:146} WARNING - 2022-09-12 22:58:25.746 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202006-citibike-tripdata.csv
+2022-09-12 22:58:25.746 | INFO     | __main__:zip_extractor:196 - 202006-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,748] {ssh.py:146} WARNING - 2022-09-12 22:58:25.746 | INFO     | __main__:zip_extractor:196 - __MACOSX/ файл разархивирован
+2022-09-12 22:58:25.746 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202006-citibike-tripdata.csv
+2022-09-12 22:58:25.746 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202006-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.747 | INFO     | __main__:<module>:287 - Файл существует: 202007-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.747 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202007-citibike-tripdata.csv
+2022-09-12 22:58:25.747 | INFO     | __main__:zip_extractor:196 - 202007-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,749] {ssh.py:146} WARNING - 2022-09-12 22:58:25.748 | INFO     | __main__:<module>:287 - Файл существует: 202008-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.748 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202008-citibike-tripdata.csv
+[2022-09-12 13:58:25,749] {ssh.py:146} WARNING - 2022-09-12 22:58:25.748 | INFO     | __main__:zip_extractor:196 - 202008-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,749] {ssh.py:146} WARNING - 2022-09-12 22:58:25.749 | INFO     | __main__:<module>:287 - Файл существует: 202009-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,750] {ssh.py:146} WARNING - 2022-09-12 22:58:25.749 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202009-citibike-tripdata.csv
+[2022-09-12 13:58:25,750] {ssh.py:146} WARNING - 2022-09-12 22:58:25.749 | INFO     | __main__:zip_extractor:196 - 202009-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,750] {ssh.py:146} WARNING - 2022-09-12 22:58:25.750 | INFO     | __main__:<module>:287 - Файл существует: 202010-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,751] {ssh.py:146} WARNING - 2022-09-12 22:58:25.750 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202010-citibike-tripdata.csv
+[2022-09-12 13:58:25,752] {ssh.py:146} WARNING - 2022-09-12 22:58:25.750 | INFO     | __main__:zip_extractor:196 - 202010-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.751 | INFO     | __main__:<module>:287 - Файл существует: 202011-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.751 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202011-citibike-tripdata.csv
+2022-09-12 22:58:25.751 | INFO     | __main__:zip_extractor:196 - 202011-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.751 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202011-citibike-tripdata.csv
+2022-09-12 22:58:25.752 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202011-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,753] {ssh.py:146} WARNING - 2022-09-12 22:58:25.752 | INFO     | __main__:<module>:287 - Файл существует: 202012-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,753] {ssh.py:146} WARNING - 2022-09-12 22:58:25.753 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202012-citibike-tripdata.csv
+[2022-09-12 13:58:25,761] {ssh.py:146} WARNING - 2022-09-12 22:58:25.753 | INFO     | __main__:zip_extractor:196 - 202012-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.753 | INFO     | __main__:<module>:287 - Файл существует: 202101-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.754 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202101-citibike-tripdata.csv
+2022-09-12 22:58:25.754 | INFO     | __main__:zip_extractor:196 - 202101-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.754 | INFO     | __main__:<module>:287 - Файл существует: 202102-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.755 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202102-citibike-tripdata.csv
+2022-09-12 22:58:25.755 | INFO     | __main__:zip_extractor:196 - 202102-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.755 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202102-citibike-tripdata.csv
+2022-09-12 22:58:25.755 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202102-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.755 | INFO     | __main__:<module>:287 - Файл существует: 202103-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.756 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202103-citibike-tripdata.csv
+2022-09-12 22:58:25.756 | INFO     | __main__:zip_extractor:196 - 202103-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.756 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202103-citibike-tripdata.csv
+2022-09-12 22:58:25.756 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202103-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,761] {ssh.py:146} WARNING - 2022-09-12 22:58:25.756 | INFO     | __main__:<module>:287 - Файл существует: 202104-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.757 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202104-citibike-tripdata.csv
+2022-09-12 22:58:25.757 | INFO     | __main__:zip_extractor:196 - 202104-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.757 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202104-citibike-tripdata.csv
+2022-09-12 22:58:25.757 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202104-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,762] {ssh.py:146} WARNING - 2022-09-12 22:58:25.757 | INFO     | __main__:<module>:287 - Файл существует: 202105-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.758 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202105-citibike-tripdata.csv
+[2022-09-12 13:58:25,765] {ssh.py:146} WARNING - 2022-09-12 22:58:25.758 | INFO     | __main__:zip_extractor:196 - 202105-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.758 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202105-citibike-tripdata.csv
+2022-09-12 22:58:25.758 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202105-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.759 | INFO     | __main__:<module>:287 - Файл существует: 202106-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.759 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202106-citibike-tripdata.csv
+2022-09-12 22:58:25.759 | INFO     | __main__:zip_extractor:196 - 202106-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.759 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202106-citibike-tripdata.csv
+2022-09-12 22:58:25.760 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202106-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.760 | INFO     | __main__:<module>:287 - Файл существует: 202107-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.761 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202107-citibike-tripdata.csv
+2022-09-12 22:58:25.761 | INFO     | __main__:zip_extractor:196 - 202107-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.761 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202107-citibike-tripdata.csv
+2022-09-12 22:58:25.761 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202107-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.762 | INFO     | __main__:<module>:287 - Файл существует: 202108-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,768] {ssh.py:146} WARNING - 2022-09-12 22:58:25.763 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202108-citibike-tripdata.csv
+2022-09-12 22:58:25.763 | INFO     | __main__:zip_extractor:196 - 202108-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.763 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202108-citibike-tripdata.csv
+2022-09-12 22:58:25.763 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202108-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.764 | INFO     | __main__:<module>:287 - Файл существует: 202109-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.764 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202109-citibike-tripdata.csv
+2022-09-12 22:58:25.764 | INFO     | __main__:zip_extractor:196 - 202109-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.764 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202109-citibike-tripdata.csv
+2022-09-12 22:58:25.764 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202109-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.765 | INFO     | __main__:<module>:287 - Файл существует: 202110-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.765 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202110-citibike-tripdata.csv
+2022-09-12 22:58:25.766 | INFO     | __main__:zip_extractor:196 - 202110-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.766 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202110-citibike-tripdata.csv
+[2022-09-12 13:58:25,770] {ssh.py:146} WARNING - 2022-09-12 22:58:25.766 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202110-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.766 | INFO     | __main__:<module>:287 - Файл существует: 202111-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.767 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202111-citibike-tripdata.csv
+2022-09-12 22:58:25.767 | INFO     | __main__:zip_extractor:196 - 202111-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.767 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202111-citibike-tripdata.csv
+2022-09-12 22:58:25.767 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202111-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.767 | INFO     | __main__:<module>:287 - Файл существует: 202112-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.768 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202112-citibike-tripdata.csv
+2022-09-12 22:58:25.768 | INFO     | __main__:zip_extractor:196 - 202112-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,770] {ssh.py:146} WARNING - 2022-09-12 22:58:25.768 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202112-citibike-tripdata.csv
+2022-09-12 22:58:25.768 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202112-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,772] {ssh.py:146} WARNING - 2022-09-12 22:58:25.768 | INFO     | __main__:<module>:287 - Файл существует: 202201-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.769 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202201-citibike-tripdata.csv
+2022-09-12 22:58:25.769 | INFO     | __main__:zip_extractor:196 - 202201-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.769 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202201-citibike-tripdata.csv
+[2022-09-12 13:58:25,772] {ssh.py:146} WARNING - 2022-09-12 22:58:25.769 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202201-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,773] {ssh.py:146} WARNING - 2022-09-12 22:58:25.770 | INFO     | __main__:<module>:287 - Файл существует: 202202-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.770 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202202-citibike-tripdata.csv
+[2022-09-12 13:58:25,774] {ssh.py:146} WARNING - 2022-09-12 22:58:25.770 | INFO     | __main__:zip_extractor:196 - 202202-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.770 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202202-citibike-tripdata.csv
+[2022-09-12 13:58:25,774] {ssh.py:146} WARNING - 2022-09-12 22:58:25.770 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202202-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,775] {ssh.py:146} WARNING - 2022-09-12 22:58:25.771 | INFO     | __main__:<module>:287 - Файл существует: 202203-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.772 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202203-citibike-tripdata.csv
+[2022-09-12 13:58:25,777] {ssh.py:146} WARNING - 2022-09-12 22:58:25.772 | INFO     | __main__:zip_extractor:196 - 202203-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.772 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202203-citibike-tripdata.csv
+2022-09-12 22:58:25.773 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202203-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.773 | INFO     | __main__:<module>:287 - Файл существует: 202204-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.774 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202204-citibike-tripdata.csv
+2022-09-12 22:58:25.774 | INFO     | __main__:zip_extractor:196 - 202204-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.774 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202204-citibike-tripdata.csv
+2022-09-12 22:58:25.774 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202204-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.774 | INFO     | __main__:<module>:287 - Файл существует: 202205-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.775 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202205-citibike-tripdata.csv
+2022-09-12 22:58:25.775 | INFO     | __main__:zip_extractor:196 - 202205-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,781] {ssh.py:146} WARNING - 2022-09-12 22:58:25.775 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202205-citibike-tripdata.csv
+2022-09-12 22:58:25.775 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202205-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.776 | INFO     | __main__:<module>:287 - Файл существует: 202206-citbike-tripdata.csv.zip
+2022-09-12 22:58:25.777 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202206-citbike-tripdata.csv
+2022-09-12 22:58:25.777 | INFO     | __main__:zip_extractor:196 - 202206-citbike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.777 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202206-citbike-tripdata.csv
+2022-09-12 22:58:25.777 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202206-citbike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.777 | INFO     | __main__:<module>:287 - Файл существует: 202207-citbike-tripdata.csv.zip
+2022-09-12 22:58:25.778 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202207-citbike-tripdata.csv
+2022-09-12 22:58:25.778 | INFO     | __main__:zip_extractor:196 - 202207-citbike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.778 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202207-citbike-tripdata.csv
+2022-09-12 22:58:25.779 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202207-citbike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.780 | INFO     | __main__:<module>:287 - Файл существует: 202208-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.780 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: 202208-citibike-tripdata.csv
+2022-09-12 22:58:25.780 | INFO     | __main__:zip_extractor:196 - 202208-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.781 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._202208-citibike-tripdata.csv
+2022-09-12 22:58:25.781 | INFO     | __main__:zip_extractor:196 - __MACOSX/._202208-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,782] {ssh.py:146} WARNING - 2022-09-12 22:58:25.781 | INFO     | __main__:<module>:287 - Файл существует: JC-201509-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,782] {ssh.py:146} WARNING - 2022-09-12 22:58:25.782 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201509-citibike-tripdata.csv
+2022-09-12 22:58:25.782 | INFO     | __main__:zip_extractor:196 - JC-201509-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,783] {ssh.py:146} WARNING - 2022-09-12 22:58:25.782 | INFO     | __main__:<module>:287 - Файл существует: JC-201510-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.783 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201510-citibike-tripdata.csv
+2022-09-12 22:58:25.783 | INFO     | __main__:zip_extractor:196 - JC-201510-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,784] {ssh.py:146} WARNING - 2022-09-12 22:58:25.783 | INFO     | __main__:<module>:287 - Файл существует: JC-201511-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.784 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201511-citibike-tripdata.csv
+2022-09-12 22:58:25.784 | INFO     | __main__:zip_extractor:196 - JC-201511-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,785] {ssh.py:146} WARNING - 2022-09-12 22:58:25.784 | INFO     | __main__:<module>:287 - Файл существует: JC-201512-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.785 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201512-citibike-tripdata.csv
+2022-09-12 22:58:25.785 | INFO     | __main__:zip_extractor:196 - JC-201512-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,786] {ssh.py:146} WARNING - 2022-09-12 22:58:25.785 | INFO     | __main__:<module>:287 - Файл существует: JC-201601-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,786] {ssh.py:146} WARNING - 2022-09-12 22:58:25.786 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-20161-citibike-tripdata.csv
+[2022-09-12 13:58:25,787] {ssh.py:146} WARNING - 2022-09-12 22:58:25.786 | INFO     | __main__:zip_extractor:196 - JC-20161-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.786 | INFO     | __main__:<module>:287 - Файл существует: JC-201602-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.787 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-20162-citibike-tripdata.csv
+2022-09-12 22:58:25.787 | INFO     | __main__:zip_extractor:196 - JC-20162-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,788] {ssh.py:146} WARNING - 2022-09-12 22:58:25.787 | INFO     | __main__:<module>:287 - Файл существует: JC-201603-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,789] {ssh.py:146} WARNING - 2022-09-12 22:58:25.788 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-20163-citibike-tripdata.csv
+[2022-09-12 13:58:25,789] {ssh.py:146} WARNING - 2022-09-12 22:58:25.789 | INFO     | __main__:zip_extractor:196 - JC-20163-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,790] {ssh.py:146} WARNING - 2022-09-12 22:58:25.789 | INFO     | __main__:<module>:287 - Файл существует: JC-201604-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,790] {ssh.py:146} WARNING - 2022-09-12 22:58:25.790 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201604-citibike-tripdata.csv
+[2022-09-12 13:58:25,791] {ssh.py:146} WARNING - 2022-09-12 22:58:25.790 | INFO     | __main__:zip_extractor:196 - JC-201604-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,791] {ssh.py:146} WARNING - 2022-09-12 22:58:25.790 | INFO     | __main__:<module>:287 - Файл существует: JC-201605-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,792] {ssh.py:146} WARNING - 2022-09-12 22:58:25.791 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201605-citibike-tripdata.csv
+[2022-09-12 13:58:25,792] {ssh.py:146} WARNING - 2022-09-12 22:58:25.791 | INFO     | __main__:zip_extractor:196 - JC-201605-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,793] {ssh.py:146} WARNING - 2022-09-12 22:58:25.792 | INFO     | __main__:<module>:287 - Файл существует: JC-201606-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.793 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201606-citibike-tripdata.csv
+[2022-09-12 13:58:25,794] {ssh.py:146} WARNING - 2022-09-12 22:58:25.793 | INFO     | __main__:zip_extractor:196 - JC-201606-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,795] {ssh.py:146} WARNING - 2022-09-12 22:58:25.793 | INFO     | __main__:<module>:287 - Файл существует: JC-201607-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,796] {ssh.py:146} WARNING - 2022-09-12 22:58:25.794 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201607-citibike-tripdata.csv
+2022-09-12 22:58:25.794 | INFO     | __main__:zip_extractor:196 - JC-201607-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,796] {ssh.py:146} WARNING - 2022-09-12 22:58:25.795 | INFO     | __main__:<module>:287 - Файл существует: JC-201608-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,797] {ssh.py:146} WARNING - 2022-09-12 22:58:25.795 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201608-citibike-tripdata.csv
+[2022-09-12 13:58:25,797] {ssh.py:146} WARNING - 2022-09-12 22:58:25.796 | INFO     | __main__:zip_extractor:196 - JC-201608-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,798] {ssh.py:146} WARNING - 2022-09-12 22:58:25.797 | INFO     | __main__:<module>:287 - Файл существует: JC-201609-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.797 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201609-citibike-tripdata.csv
+2022-09-12 22:58:25.797 | INFO     | __main__:zip_extractor:196 - JC-201609-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,798] {ssh.py:146} WARNING - 2022-09-12 22:58:25.798 | INFO     | __main__:<module>:287 - Файл существует: JC-201610-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,799] {ssh.py:146} WARNING - 2022-09-12 22:58:25.799 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201610-citibike-tripdata.csv
+2022-09-12 22:58:25.799 | INFO     | __main__:zip_extractor:196 - JC-201610-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,800] {ssh.py:146} WARNING - 2022-09-12 22:58:25.799 | INFO     | __main__:<module>:287 - Файл существует: JC-201611-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,800] {ssh.py:146} WARNING - 2022-09-12 22:58:25.800 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201611-citibike-tripdata.csv
+[2022-09-12 13:58:25,801] {ssh.py:146} WARNING - 2022-09-12 22:58:25.800 | INFO     | __main__:zip_extractor:196 - JC-201611-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,801] {ssh.py:146} WARNING - 2022-09-12 22:58:25.800 | INFO     | __main__:<module>:287 - Файл существует: JC-201612-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.801 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201612-citibike-tripdata.csv
+[2022-09-12 13:58:25,802] {ssh.py:146} WARNING - 2022-09-12 22:58:25.801 | INFO     | __main__:zip_extractor:196 - JC-201612-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,802] {ssh.py:146} WARNING - 2022-09-12 22:58:25.801 | INFO     | __main__:<module>:287 - Файл существует: JC-201701-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,803] {ssh.py:146} WARNING - 2022-09-12 22:58:25.802 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201701-citibike-tripdata.csv
+2022-09-12 22:58:25.802 | INFO     | __main__:zip_extractor:196 - JC-201701-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,803] {ssh.py:146} WARNING - 2022-09-12 22:58:25.802 | INFO     | __main__:<module>:287 - Файл существует: JC-201702-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,803] {ssh.py:146} WARNING - 2022-09-12 22:58:25.803 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201702-citibike-tripdata.csv
+[2022-09-12 13:58:25,804] {ssh.py:146} WARNING - 2022-09-12 22:58:25.803 | INFO     | __main__:zip_extractor:196 - JC-201702-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.803 | INFO     | __main__:<module>:287 - Файл существует: JC-201703-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,805] {ssh.py:146} WARNING - 2022-09-12 22:58:25.804 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201703-citibike-tripdata.csv
+[2022-09-12 13:58:25,805] {ssh.py:146} WARNING - 2022-09-12 22:58:25.804 | INFO     | __main__:zip_extractor:196 - JC-201703-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.804 | INFO     | __main__:<module>:287 - Файл существует: JC-201704-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,806] {ssh.py:146} WARNING - 2022-09-12 22:58:25.806 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201704-citibike-tripdata.csv
+[2022-09-12 13:58:25,806] {ssh.py:146} WARNING - 2022-09-12 22:58:25.806 | INFO     | __main__:zip_extractor:196 - JC-201704-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.806 | INFO     | __main__:<module>:287 - Файл существует: JC-201705-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,807] {ssh.py:146} WARNING - 2022-09-12 22:58:25.807 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201705-citibike-tripdata.csv
+[2022-09-12 13:58:25,808] {ssh.py:146} WARNING - 2022-09-12 22:58:25.807 | INFO     | __main__:zip_extractor:196 - JC-201705-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,808] {ssh.py:146} WARNING - 2022-09-12 22:58:25.808 | INFO     | __main__:<module>:287 - Файл существует: JC-201706-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,809] {ssh.py:146} WARNING - 2022-09-12 22:58:25.808 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201706-citibike-tripdata.csv
+[2022-09-12 13:58:25,809] {ssh.py:146} WARNING - 2022-09-12 22:58:25.808 | INFO     | __main__:zip_extractor:196 - JC-201706-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,809] {ssh.py:146} WARNING - 2022-09-12 22:58:25.809 | INFO     | __main__:<module>:287 - Файл существует: JC-201707-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,810] {ssh.py:146} WARNING - 2022-09-12 22:58:25.809 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201707-citibike-tripdata.csv
+[2022-09-12 13:58:25,810] {ssh.py:146} WARNING - 2022-09-12 22:58:25.810 | INFO     | __main__:zip_extractor:196 - JC-201707-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,811] {ssh.py:146} WARNING - 2022-09-12 22:58:25.810 | INFO     | __main__:<module>:287 - Файл существует: JC-201708 citibike-tripdata.csv.zip
+2022-09-12 22:58:25.811 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201708 citibike-tripdata.csv
+[2022-09-12 13:58:25,812] {ssh.py:146} WARNING - 2022-09-12 22:58:25.811 | INFO     | __main__:zip_extractor:196 - JC-201708 citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,813] {ssh.py:146} WARNING - 2022-09-12 22:58:25.811 | INFO     | __main__:<module>:287 - Файл существует: JC-201709-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.812 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201709-citibike-tripdata.csv
+[2022-09-12 13:58:25,813] {ssh.py:146} WARNING - 2022-09-12 22:58:25.812 | INFO     | __main__:zip_extractor:196 - JC-201709-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,814] {ssh.py:146} WARNING - 2022-09-12 22:58:25.813 | INFO     | __main__:<module>:287 - Файл существует: JC-201710-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.814 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201710-citibike-tripdata.csv
+[2022-09-12 13:58:25,815] {ssh.py:146} WARNING - 2022-09-12 22:58:25.814 | INFO     | __main__:zip_extractor:196 - JC-201710-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,815] {ssh.py:146} WARNING - 2022-09-12 22:58:25.815 | INFO     | __main__:<module>:287 - Файл существует: JC-201711-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,815] {ssh.py:146} WARNING - 2022-09-12 22:58:25.815 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201711-citibike-tripdata.csv
+[2022-09-12 13:58:25,816] {ssh.py:146} WARNING - 2022-09-12 22:58:25.815 | INFO     | __main__:zip_extractor:196 - JC-201711-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,816] {ssh.py:146} WARNING - 2022-09-12 22:58:25.816 | INFO     | __main__:<module>:287 - Файл существует: JC-201712-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,816] {ssh.py:146} WARNING - 2022-09-12 22:58:25.816 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201712-citibike-tripdata.csv
+[2022-09-12 13:58:25,817] {ssh.py:146} WARNING - 2022-09-12 22:58:25.816 | INFO     | __main__:zip_extractor:196 - JC-201712-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,817] {ssh.py:146} WARNING - 2022-09-12 22:58:25.817 | INFO     | __main__:<module>:287 - Файл существует: JC-201801-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,818] {ssh.py:146} WARNING - 2022-09-12 22:58:25.817 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201801-citibike-tripdata.csv
+[2022-09-12 13:58:25,818] {ssh.py:146} WARNING - 2022-09-12 22:58:25.818 | INFO     | __main__:zip_extractor:196 - JC-201801-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,818] {ssh.py:146} WARNING - 2022-09-12 22:58:25.818 | INFO     | __main__:<module>:287 - Файл существует: JC-201802-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,819] {ssh.py:146} WARNING - 2022-09-12 22:58:25.819 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201802-citibike-tripdata.csv
+[2022-09-12 13:58:25,820] {ssh.py:146} WARNING - 2022-09-12 22:58:25.819 | INFO     | __main__:zip_extractor:196 - JC-201802-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.819 | INFO     | __main__:<module>:287 - Файл существует: JC-201803-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,820] {ssh.py:146} WARNING - 2022-09-12 22:58:25.820 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201803-citibike-tripdata.csv
+[2022-09-12 13:58:25,820] {ssh.py:146} WARNING - 2022-09-12 22:58:25.820 | INFO     | __main__:zip_extractor:196 - JC-201803-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,821] {ssh.py:146} WARNING - 2022-09-12 22:58:25.821 | INFO     | __main__:<module>:287 - Файл существует: JC-201804-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,822] {ssh.py:146} WARNING - 2022-09-12 22:58:25.821 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201804-citibike-tripdata.csv
+[2022-09-12 13:58:25,822] {ssh.py:146} WARNING - 2022-09-12 22:58:25.821 | INFO     | __main__:zip_extractor:196 - JC-201804-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,823] {ssh.py:146} WARNING - 2022-09-12 22:58:25.822 | INFO     | __main__:<module>:287 - Файл существует: JC-201805-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.822 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201805-citibike-tripdata.csv
+[2022-09-12 13:58:25,823] {ssh.py:146} WARNING - 2022-09-12 22:58:25.822 | INFO     | __main__:zip_extractor:196 - JC-201805-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,823] {ssh.py:146} WARNING - 2022-09-12 22:58:25.823 | INFO     | __main__:<module>:287 - Файл существует: JC-201806-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,825] {ssh.py:146} WARNING - 2022-09-12 22:58:25.823 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201806-citibike-tripdata.csv
+[2022-09-12 13:58:25,825] {ssh.py:146} WARNING - 2022-09-12 22:58:25.824 | INFO     | __main__:zip_extractor:196 - JC-201806-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,826] {ssh.py:146} WARNING - 2022-09-12 22:58:25.825 | INFO     | __main__:<module>:287 - Файл существует: JC-201807-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,826] {ssh.py:146} WARNING - 2022-09-12 22:58:25.826 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201807-citibike-tripdata.csv
+[2022-09-12 13:58:25,827] {ssh.py:146} WARNING - 2022-09-12 22:58:25.826 | INFO     | __main__:zip_extractor:196 - JC-201807-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,828] {ssh.py:146} WARNING - 2022-09-12 22:58:25.827 | INFO     | __main__:<module>:287 - Файл существует: JC-201808-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,828] {ssh.py:146} WARNING - 2022-09-12 22:58:25.827 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201808-citibike-tripdata.csv
+2022-09-12 22:58:25.827 | INFO     | __main__:zip_extractor:196 - JC-201808-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,829] {ssh.py:146} WARNING - 2022-09-12 22:58:25.828 | INFO     | __main__:<module>:287 - Файл существует: JC-201809-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.828 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201809-citibike-tripdata.csv
+[2022-09-12 13:58:25,829] {ssh.py:146} WARNING - 2022-09-12 22:58:25.829 | INFO     | __main__:zip_extractor:196 - JC-201809-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,830] {ssh.py:146} WARNING - 2022-09-12 22:58:25.829 | INFO     | __main__:<module>:287 - Файл существует: JC-201810-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,830] {ssh.py:146} WARNING - 2022-09-12 22:58:25.830 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201810-citibike-tripdata.csv
+[2022-09-12 13:58:25,831] {ssh.py:146} WARNING - 2022-09-12 22:58:25.830 | INFO     | __main__:zip_extractor:196 - JC-201810-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,831] {ssh.py:146} WARNING - 2022-09-12 22:58:25.831 | INFO     | __main__:<module>:287 - Файл существует: JC-201811-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,833] {ssh.py:146} WARNING - 2022-09-12 22:58:25.831 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201811-citibike-tripdata.csv
+2022-09-12 22:58:25.832 | INFO     | __main__:zip_extractor:196 - JC-201811-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.832 | INFO     | __main__:<module>:287 - Файл существует: JC-201812-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.832 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201812-citibike-tripdata.csv
+[2022-09-12 13:58:25,833] {ssh.py:146} WARNING - 2022-09-12 22:58:25.833 | INFO     | __main__:zip_extractor:196 - JC-201812-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,834] {ssh.py:146} WARNING - 2022-09-12 22:58:25.833 | INFO     | __main__:<module>:287 - Файл существует: JC-201901-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.834 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201901-citibike-tripdata.csv
+[2022-09-12 13:58:25,835] {ssh.py:146} WARNING - 2022-09-12 22:58:25.834 | INFO     | __main__:zip_extractor:196 - JC-201901-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.834 | INFO     | __main__:<module>:287 - Файл существует: JC-201902-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,835] {ssh.py:146} WARNING - 2022-09-12 22:58:25.835 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201902-citibike-tripdata.csv
+[2022-09-12 13:58:25,836] {ssh.py:146} WARNING - 2022-09-12 22:58:25.835 | INFO     | __main__:zip_extractor:196 - JC-201902-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,836] {ssh.py:146} WARNING - 2022-09-12 22:58:25.836 | INFO     | __main__:<module>:287 - Файл существует: JC-201903-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,837] {ssh.py:146} WARNING - 2022-09-12 22:58:25.836 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201903-citibike-tripdata.csv
+[2022-09-12 13:58:25,837] {ssh.py:146} WARNING - 2022-09-12 22:58:25.836 | INFO     | __main__:zip_extractor:196 - JC-201903-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.837 | INFO     | __main__:<module>:287 - Файл существует: JC-201904-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,838] {ssh.py:146} WARNING - 2022-09-12 22:58:25.837 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201904-citibike-tripdata.csv
+[2022-09-12 13:58:25,838] {ssh.py:146} WARNING - 2022-09-12 22:58:25.837 | INFO     | __main__:zip_extractor:196 - JC-201904-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,839] {ssh.py:146} WARNING - 2022-09-12 22:58:25.838 | INFO     | __main__:<module>:287 - Файл существует: JC-201905-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,839] {ssh.py:146} WARNING - 2022-09-12 22:58:25.838 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201905-citibike-tripdata.csv
+[2022-09-12 13:58:25,840] {ssh.py:146} WARNING - 2022-09-12 22:58:25.838 | INFO     | __main__:zip_extractor:196 - JC-201905-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,840] {ssh.py:146} WARNING - 2022-09-12 22:58:25.839 | INFO     | __main__:<module>:287 - Файл существует: JC-201906-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,841] {ssh.py:146} WARNING - 2022-09-12 22:58:25.840 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201906-citibike-tripdata.csv
+[2022-09-12 13:58:25,841] {ssh.py:146} WARNING - 2022-09-12 22:58:25.840 | INFO     | __main__:zip_extractor:196 - JC-201906-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,842] {ssh.py:146} WARNING - 2022-09-12 22:58:25.841 | INFO     | __main__:<module>:287 - Файл существует: JC-201907-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,843] {ssh.py:146} WARNING - 2022-09-12 22:58:25.842 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201907-citibike-tripdata.csv
+2022-09-12 22:58:25.842 | INFO     | __main__:zip_extractor:196 - JC-201907-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,844] {ssh.py:146} WARNING - 2022-09-12 22:58:25.842 | INFO     | __main__:<module>:287 - Файл существует: JC-201908-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.843 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201908-citibike-tripdata.csv
+[2022-09-12 13:58:25,844] {ssh.py:146} WARNING - 2022-09-12 22:58:25.843 | INFO     | __main__:zip_extractor:196 - JC-201908-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.844 | INFO     | __main__:<module>:287 - Файл существует: JC-201909-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,845] {ssh.py:146} WARNING - 2022-09-12 22:58:25.844 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201909-citibike-tripdata.csv
+[2022-09-12 13:58:25,846] {ssh.py:146} WARNING - 2022-09-12 22:58:25.844 | INFO     | __main__:zip_extractor:196 - JC-201909-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.845 | INFO     | __main__:<module>:287 - Файл существует: JC-201910-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,846] {ssh.py:146} WARNING - 2022-09-12 22:58:25.845 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201910-citibike-tripdata.csv
+[2022-09-12 13:58:25,847] {ssh.py:146} WARNING - 2022-09-12 22:58:25.846 | INFO     | __main__:zip_extractor:196 - JC-201910-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,848] {ssh.py:146} WARNING - 2022-09-12 22:58:25.846 | INFO     | __main__:<module>:287 - Файл существует: JC-201911-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.847 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201911-citibike-tripdata.csv
+2022-09-12 22:58:25.847 | INFO     | __main__:zip_extractor:196 - JC-201911-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,848] {ssh.py:146} WARNING - 2022-09-12 22:58:25.848 | INFO     | __main__:<module>:287 - Файл существует: JC-201912-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,849] {ssh.py:146} WARNING - 2022-09-12 22:58:25.848 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-201912-citibike-tripdata.csv
+[2022-09-12 13:58:25,849] {ssh.py:146} WARNING - 2022-09-12 22:58:25.848 | INFO     | __main__:zip_extractor:196 - JC-201912-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,849] {ssh.py:146} WARNING - 2022-09-12 22:58:25.849 | INFO     | __main__:<module>:287 - Файл существует: JC-202001-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,850] {ssh.py:146} WARNING - 2022-09-12 22:58:25.849 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202001-citibike-tripdata.csv
+[2022-09-12 13:58:25,850] {ssh.py:146} WARNING - 2022-09-12 22:58:25.850 | INFO     | __main__:zip_extractor:196 - JC-202001-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,851] {ssh.py:146} WARNING - 2022-09-12 22:58:25.850 | INFO     | __main__:<module>:287 - Файл существует: JC-202002-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.850 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202002-citibike-tripdata.csv
+[2022-09-12 13:58:25,851] {ssh.py:146} WARNING - 2022-09-12 22:58:25.851 | INFO     | __main__:zip_extractor:196 - JC-202002-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,852] {ssh.py:146} WARNING - 2022-09-12 22:58:25.851 | INFO     | __main__:<module>:287 - Файл существует: JC-202003-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.852 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202003-citibike-tripdata.csv
+[2022-09-12 13:58:25,853] {ssh.py:146} WARNING - 2022-09-12 22:58:25.852 | INFO     | __main__:zip_extractor:196 - JC-202003-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.852 | INFO     | __main__:<module>:287 - Файл существует: JC-202004-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.852 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202004-citibike-tripdata.csv
+[2022-09-12 13:58:25,853] {ssh.py:146} WARNING - 2022-09-12 22:58:25.852 | INFO     | __main__:zip_extractor:196 - JC-202004-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,854] {ssh.py:146} WARNING - 2022-09-12 22:58:25.853 | INFO     | __main__:<module>:287 - Файл существует: JC-202005-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.854 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202005-citibike-tripdata.csv
+[2022-09-12 13:58:25,854] {ssh.py:146} WARNING - 2022-09-12 22:58:25.854 | INFO     | __main__:zip_extractor:196 - JC-202005-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,854] {ssh.py:146} WARNING - 2022-09-12 22:58:25.854 | INFO     | __main__:<module>:287 - Файл существует: JC-202006-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,855] {ssh.py:146} WARNING - 2022-09-12 22:58:25.855 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202006-citibike-tripdata.csv
+[2022-09-12 13:58:25,855] {ssh.py:146} WARNING - 2022-09-12 22:58:25.855 | INFO     | __main__:zip_extractor:196 - JC-202006-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,856] {ssh.py:146} WARNING - 2022-09-12 22:58:25.855 | INFO     | __main__:<module>:287 - Файл существует: JC-202007-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,856] {ssh.py:146} WARNING - 2022-09-12 22:58:25.856 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202007-citibike-tripdata.csv
+[2022-09-12 13:58:25,856] {ssh.py:146} WARNING - 2022-09-12 22:58:25.856 | INFO     | __main__:zip_extractor:196 - JC-202007-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,857] {ssh.py:146} WARNING - 2022-09-12 22:58:25.856 | INFO     | __main__:<module>:287 - Файл существует: JC-202008-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,859] {ssh.py:146} WARNING - 2022-09-12 22:58:25.857 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202008-citibike-tripdata.csv
+2022-09-12 22:58:25.857 | INFO     | __main__:zip_extractor:196 - JC-202008-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.857 | INFO     | __main__:<module>:287 - Файл существует: JC-202009-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.858 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202009-citibike-tripdata.csv
+2022-09-12 22:58:25.858 | INFO     | __main__:zip_extractor:196 - JC-202009-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,859] {ssh.py:146} WARNING - 2022-09-12 22:58:25.859 | INFO     | __main__:<module>:287 - Файл существует: JC-202010-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,860] {ssh.py:146} WARNING - 2022-09-12 22:58:25.859 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202010-citibike-tripdata.csv
+[2022-09-12 13:58:25,860] {ssh.py:146} WARNING - 2022-09-12 22:58:25.859 | INFO     | __main__:zip_extractor:196 - JC-202010-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,861] {ssh.py:146} WARNING - 2022-09-12 22:58:25.860 | INFO     | __main__:<module>:287 - Файл существует: JC-202011-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,862] {ssh.py:146} WARNING - 2022-09-12 22:58:25.860 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202011-citibike-tripdata.csv
+2022-09-12 22:58:25.861 | INFO     | __main__:zip_extractor:196 - JC-202011-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.861 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202011-citibike-tripdata.csv
+2022-09-12 22:58:25.861 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202011-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.862 | INFO     | __main__:<module>:287 - Файл существует: JC-202012-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,863] {ssh.py:146} WARNING - 2022-09-12 22:58:25.862 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202012-citibike-tripdata.csv
+[2022-09-12 13:58:25,863] {ssh.py:146} WARNING - 2022-09-12 22:58:25.862 | INFO     | __main__:zip_extractor:196 - JC-202012-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,863] {ssh.py:146} WARNING - 2022-09-12 22:58:25.863 | INFO     | __main__:<module>:287 - Файл существует: JC-202101-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,864] {ssh.py:146} WARNING - 2022-09-12 22:58:25.863 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202101-citibike-tripdata.csv
+[2022-09-12 13:58:25,865] {ssh.py:146} WARNING - 2022-09-12 22:58:25.864 | INFO     | __main__:zip_extractor:196 - JC-202101-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.864 | INFO     | __main__:<module>:287 - Файл существует: JC-202102-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.864 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202102-citibike-tripdata.csv
+2022-09-12 22:58:25.865 | INFO     | __main__:zip_extractor:196 - JC-202102-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,866] {ssh.py:146} WARNING - 2022-09-12 22:58:25.865 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202102-citibike-tripdata.csv
+2022-09-12 22:58:25.865 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202102-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.865 | INFO     | __main__:<module>:287 - Файл существует: JC-202103-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.866 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202103-citibike-tripdata.csv
+[2022-09-12 13:58:25,867] {ssh.py:146} WARNING - 2022-09-12 22:58:25.866 | INFO     | __main__:zip_extractor:196 - JC-202103-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.866 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202103-citibike-tripdata.csv
+2022-09-12 22:58:25.866 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202103-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,868] {ssh.py:146} WARNING - 2022-09-12 22:58:25.866 | INFO     | __main__:<module>:287 - Файл существует: JC-202104-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.867 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202104-citibike-tripdata.csv
+2022-09-12 22:58:25.867 | INFO     | __main__:zip_extractor:196 - JC-202104-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.867 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202104-citibike-tripdata.csv
+2022-09-12 22:58:25.867 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202104-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,869] {ssh.py:146} WARNING - 2022-09-12 22:58:25.868 | INFO     | __main__:<module>:287 - Файл существует: JC-202105-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.868 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202105-citibike-tripdata.csv
+[2022-09-12 13:58:25,870] {ssh.py:146} WARNING - 2022-09-12 22:58:25.868 | INFO     | __main__:zip_extractor:196 - JC-202105-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.868 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202105-citibike-tripdata.csv
+2022-09-12 22:58:25.869 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202105-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.869 | INFO     | __main__:<module>:287 - Файл существует: JC-202106-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,871] {ssh.py:146} WARNING - 2022-09-12 22:58:25.869 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202106-citibike-tripdata.csv
+2022-09-12 22:58:25.869 | INFO     | __main__:zip_extractor:196 - JC-202106-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.869 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202106-citibike-tripdata.csv
+2022-09-12 22:58:25.869 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202106-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.870 | INFO     | __main__:<module>:287 - Файл существует: JC-202107-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,872] {ssh.py:146} WARNING - 2022-09-12 22:58:25.870 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202107-citibike-tripdata.csv
+2022-09-12 22:58:25.871 | INFO     | __main__:zip_extractor:196 - JC-202107-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.871 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202107-citibike-tripdata.csv
+[2022-09-12 13:58:25,872] {ssh.py:146} WARNING - 2022-09-12 22:58:25.871 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202107-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,873] {ssh.py:146} WARNING - 2022-09-12 22:58:25.871 | INFO     | __main__:<module>:287 - Файл существует: JC-202108-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,874] {ssh.py:146} WARNING - 2022-09-12 22:58:25.872 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202108-citibike-tripdata.csv
+2022-09-12 22:58:25.872 | INFO     | __main__:zip_extractor:196 - JC-202108-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.873 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202108-citibike-tripdata.csv
+[2022-09-12 13:58:25,874] {ssh.py:146} WARNING - 2022-09-12 22:58:25.873 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202108-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,876] {ssh.py:146} WARNING - 2022-09-12 22:58:25.873 | INFO     | __main__:<module>:287 - Файл существует: JC-202109-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.874 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202109-citibike-tripdata.csv
+2022-09-12 22:58:25.874 | INFO     | __main__:zip_extractor:196 - JC-202109-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.874 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202109-citibike-tripdata.csv
+[2022-09-12 13:58:25,877] {ssh.py:146} WARNING - 2022-09-12 22:58:25.874 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202109-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.875 | INFO     | __main__:<module>:287 - Файл существует: JC-202110-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,878] {ssh.py:146} WARNING - 2022-09-12 22:58:25.875 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202110-citibike-tripdata.csv
+[2022-09-12 13:58:25,879] {ssh.py:146} WARNING - 2022-09-12 22:58:25.875 | INFO     | __main__:zip_extractor:196 - JC-202110-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.875 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202110-citibike-tripdata.csv
+2022-09-12 22:58:25.876 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202110-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.876 | INFO     | __main__:<module>:287 - Файл существует: JC-202111-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,879] {ssh.py:146} WARNING - 2022-09-12 22:58:25.876 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202111-citibike-tripdata.csv
+[2022-09-12 13:58:25,883] {ssh.py:146} WARNING - 2022-09-12 22:58:25.878 | INFO     | __main__:zip_extractor:196 - JC-202111-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,884] {ssh.py:146} WARNING - 2022-09-12 22:58:25.878 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202111-citibike-tripdata.csv
+[2022-09-12 13:58:25,888] {ssh.py:146} WARNING - 2022-09-12 22:58:25.878 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202111-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.878 | INFO     | __main__:<module>:287 - Файл существует: JC-202112-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.879 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202112-citibike-tripdata.csv
+2022-09-12 22:58:25.879 | INFO     | __main__:zip_extractor:196 - JC-202112-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.879 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202112-citibike-tripdata.csv
+2022-09-12 22:58:25.879 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202112-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.880 | INFO     | __main__:<module>:287 - Файл существует: JC-202201-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.880 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202201-citibike-tripdata.csv
+2022-09-12 22:58:25.880 | INFO     | __main__:zip_extractor:196 - JC-202201-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.881 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202201-citibike-tripdata.csv
+2022-09-12 22:58:25.881 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202201-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.881 | INFO     | __main__:<module>:287 - Файл существует: JC-202202-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.882 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202202-citibike-tripdata.csv
+2022-09-12 22:58:25.882 | INFO     | __main__:zip_extractor:196 - JC-202202-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.882 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202202-citibike-tripdata.csv
+2022-09-12 22:58:25.882 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202202-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.882 | INFO     | __main__:<module>:287 - Файл существует: JC-202203-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.883 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202203-citibike-tripdata.csv
+[2022-09-12 13:58:25,889] {ssh.py:146} WARNING - 2022-09-12 22:58:25.883 | INFO     | __main__:zip_extractor:196 - JC-202203-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.883 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202203-citibike-tripdata.csv
+2022-09-12 22:58:25.883 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202203-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.884 | INFO     | __main__:<module>:287 - Файл существует: JC-202204-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.884 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202204-citibike-tripdata.csv
+2022-09-12 22:58:25.885 | INFO     | __main__:zip_extractor:196 - JC-202204-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.885 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202204-citibike-tripdata.csv
+2022-09-12 22:58:25.885 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202204-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.885 | INFO     | __main__:<module>:287 - Файл существует: JC-202205-citibike-tripdata.csv.zip
+[2022-09-12 13:58:25,890] {ssh.py:146} WARNING - 2022-09-12 22:58:25.886 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202205-citibike-tripdata.csv
+2022-09-12 22:58:25.886 | INFO     | __main__:zip_extractor:196 - JC-202205-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.886 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202205-citibike-tripdata.csv
+[2022-09-12 13:58:25,891] {ssh.py:146} WARNING - 2022-09-12 22:58:25.887 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202205-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.887 | INFO     | __main__:<module>:287 - Файл существует: JC-202206-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.888 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202206-citibike-tripdata.csv
+2022-09-12 22:58:25.888 | INFO     | __main__:zip_extractor:196 - JC-202206-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,892] {ssh.py:146} WARNING - 2022-09-12 22:58:25.888 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202206-citibike-tripdata.csv
+2022-09-12 22:58:25.888 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202206-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,892] {ssh.py:146} WARNING - 2022-09-12 22:58:25.888 | INFO     | __main__:<module>:287 - Файл существует: JC-202207-citbike-tripdata.csv.zip
+[2022-09-12 13:58:25,893] {ssh.py:146} WARNING - 2022-09-12 22:58:25.889 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202207-citbike-tripdata.csv
+[2022-09-12 13:58:25,894] {ssh.py:146} WARNING - 2022-09-12 22:58:25.889 | INFO     | __main__:zip_extractor:196 - JC-202207-citbike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.889 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202207-citbike-tripdata.csv
+2022-09-12 22:58:25.889 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202207-citbike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.890 | INFO     | __main__:<module>:287 - Файл существует: JC-202208-citibike-tripdata.csv.zip
+2022-09-12 22:58:25.890 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: JC-202208-citibike-tripdata.csv
+[2022-09-12 13:58:25,894] {ssh.py:146} WARNING - 2022-09-12 22:58:25.890 | INFO     | __main__:zip_extractor:196 - JC-202208-citibike-tripdata.csv файл разархивирован
+2022-09-12 22:58:25.890 | INFO     | __main__:zip_extractor:193 - Извлекаемый из архива файл существует: __MACOSX/._JC-202208-citibike-tripdata.csv
+[2022-09-12 13:58:25,894] {ssh.py:146} WARNING - 2022-09-12 22:58:25.891 | INFO     | __main__:zip_extractor:196 - __MACOSX/._JC-202208-citibike-tripdata.csv файл разархивирован
+[2022-09-12 13:58:25,898] {ssh.py:146} WARNING - 2022-09-12 22:58:25.897 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201306-citibike-tripdata.csv
+2022-09-12 22:58:25.897 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 2013-07 - Citi Bike trip data.csv
+2022-09-12 22:58:25.897 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 2013-07 - Citi Bike trip data.csv
+2022-09-12 22:58:25.897 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 2013-08 - Citi Bike trip data.csv
+2022-09-12 22:58:25.897 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 2013-09 - Citi Bike trip data.csv
+[2022-09-12 13:58:25,900] {ssh.py:146} WARNING - 2022-09-12 22:58:25.897 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 2013-10 - Citi Bike trip data.csv
+2022-09-12 22:58:25.898 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 2013-11 - Citi Bike trip data.csv
+2022-09-12 22:58:25.898 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 2013-12 - Citi Bike trip data.csv
+2022-09-12 22:58:25.898 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 2014-01 - Citi Bike trip data.csv
+2022-09-12 22:58:25.898 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 2014-02 - Citi Bike trip data.csv
+2022-09-12 22:58:25.898 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 2014-03 - Citi Bike trip data.csv
+2022-09-12 22:58:25.898 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 2014-04 - Citi Bike trip data.csv
+2022-09-12 22:58:25.899 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 2014-05 - Citi Bike trip data.csv
+[2022-09-12 13:58:25,901] {ssh.py:146} WARNING - 2022-09-12 22:58:25.899 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 2014-06 - Citi Bike trip data.csv
+2022-09-12 22:58:25.899 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 2014-07 - Citi Bike trip data.csv
+2022-09-12 22:58:25.899 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 2014-08 - Citi Bike trip data.csv
+2022-09-12 22:58:25.899 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201409-citibike-tripdata.csv
+2022-09-12 22:58:25.899 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201410-citibike-tripdata.csv
+[2022-09-12 13:58:25,902] {ssh.py:146} WARNING - 2022-09-12 22:58:25.899 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201411-citibike-tripdata.csv
+2022-09-12 22:58:25.900 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201412-citibike-tripdata.csv
+[2022-09-12 13:58:25,903] {ssh.py:146} WARNING - 2022-09-12 22:58:25.900 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201501-citibike-tripdata.csv
+2022-09-12 22:58:25.900 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201502-citibike-tripdata.csv
+2022-09-12 22:58:25.900 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201503-citibike-tripdata.csv
+[2022-09-12 13:58:25,905] {ssh.py:146} WARNING - 2022-09-12 22:58:25.900 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201504-citibike-tripdata.csv
+2022-09-12 22:58:25.900 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201505-citibike-tripdata.csv
+2022-09-12 22:58:25.901 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201506-citibike-tripdata.csv
+2022-09-12 22:58:25.901 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201507-citibike-tripdata.csv
+2022-09-12 22:58:25.901 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201508-citibike-tripdata.csv
+2022-09-12 22:58:25.901 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201509-citibike-tripdata.csv
+2022-09-12 22:58:25.901 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201510-citibike-tripdata.csv
+2022-09-12 22:58:25.902 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201511-citibike-tripdata.csv
+2022-09-12 22:58:25.902 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201512-citibike-tripdata.csv
+2022-09-12 22:58:25.902 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201601-citibike-tripdata.csv
+[2022-09-12 13:58:25,906] {ssh.py:146} WARNING - 2022-09-12 22:58:25.902 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201602-citibike-tripdata.csv
+[2022-09-12 13:58:25,906] {ssh.py:146} WARNING - 2022-09-12 22:58:25.902 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201603-citibike-tripdata.csv
+[2022-09-12 13:58:25,907] {ssh.py:146} WARNING - 2022-09-12 22:58:25.902 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201604-citibike-tripdata.csv
+[2022-09-12 13:58:25,909] {ssh.py:146} WARNING - 2022-09-12 22:58:25.903 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201605-citibike-tripdata.csv
+2022-09-12 22:58:25.903 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201606-citibike-tripdata.csv
+2022-09-12 22:58:25.903 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201607-citibike-tripdata.csv
+2022-09-12 22:58:25.903 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201608-citibike-tripdata.csv
+[2022-09-12 13:58:25,910] {ssh.py:146} WARNING - 2022-09-12 22:58:25.904 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201609-citibike-tripdata.csv
+2022-09-12 22:58:25.904 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201610-citibike-tripdata.csv
+2022-09-12 22:58:25.904 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201611-citibike-tripdata.csv
+2022-09-12 22:58:25.904 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201612-citibike-tripdata.csv
+[2022-09-12 13:58:25,912] {ssh.py:146} WARNING - 2022-09-12 22:58:25.904 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201701-citibike-tripdata.csv
+2022-09-12 22:58:25.905 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201702-citibike-tripdata.csv
+2022-09-12 22:58:25.905 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201703-citibike-tripdata.csv
+2022-09-12 22:58:25.905 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201704-citibike-tripdata.csv
+2022-09-12 22:58:25.905 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201705-citibike-tripdata.csv
+2022-09-12 22:58:25.905 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201706-citibike-tripdata.csv
+2022-09-12 22:58:25.906 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201707-citibike-tripdata.csv
+2022-09-12 22:58:25.906 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201708-citibike-tripdata.csv
+2022-09-12 22:58:25.907 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201709-citibike-tripdata.csv
+[2022-09-12 13:58:25,912] {ssh.py:146} WARNING - 2022-09-12 22:58:25.907 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201710-citibike-tripdata.csv
+[2022-09-12 13:58:25,914] {ssh.py:146} WARNING - 2022-09-12 22:58:25.907 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201711-citibike-tripdata.csv
+2022-09-12 22:58:25.908 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201712-citibike-tripdata.csv
+2022-09-12 22:58:25.908 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201801-citibike-tripdata.csv
+2022-09-12 22:58:25.908 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201802-citibike-tripdata.csv
+2022-09-12 22:58:25.908 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201803-citibike-tripdata.csv
+2022-09-12 22:58:25.908 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201804-citibike-tripdata.csv
+2022-09-12 22:58:25.909 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201805-citibike-tripdata.csv
+[2022-09-12 13:58:25,916] {ssh.py:146} WARNING - 2022-09-12 22:58:25.909 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201806-citibike-tripdata.csv
+2022-09-12 22:58:25.909 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201807-citibike-tripdata.csv
+2022-09-12 22:58:25.909 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201808-citibike-tripdata.csv
+2022-09-12 22:58:25.909 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201809-citibike-tripdata.csv
+2022-09-12 22:58:25.909 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201810-citibike-tripdata.csv
+2022-09-12 22:58:25.910 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201811-citibike-tripdata.csv
+2022-09-12 22:58:25.910 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201812-citibike-tripdata.csv
+2022-09-12 22:58:25.910 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201901-citibike-tripdata.csv
+2022-09-12 22:58:25.910 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201902-citibike-tripdata.csv
+2022-09-12 22:58:25.910 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201903-citibike-tripdata.csv
+[2022-09-12 13:58:25,917] {ssh.py:146} WARNING - 2022-09-12 22:58:25.910 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201904-citibike-tripdata.csv
+[2022-09-12 13:58:25,917] {ssh.py:146} WARNING - 2022-09-12 22:58:25.910 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201905-citibike-tripdata.csv
+[2022-09-12 13:58:25,918] {ssh.py:146} WARNING - 2022-09-12 22:58:25.911 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201906-citibike-tripdata.csv
+2022-09-12 22:58:25.911 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201907-citibike-tripdata.csv
+2022-09-12 22:58:25.911 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201908-citibike-tripdata.csv
+2022-09-12 22:58:25.911 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201909-citibike-tripdata.csv
+2022-09-12 22:58:25.911 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201910-citibike-tripdata.csv
+[2022-09-12 13:58:25,919] {ssh.py:146} WARNING - 2022-09-12 22:58:25.911 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201911-citibike-tripdata.csv
+2022-09-12 22:58:25.912 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 201912-citibike-tripdata.csv
+2022-09-12 22:58:25.912 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202001-citibike-tripdata.csv
+2022-09-12 22:58:25.912 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202002-citibike-tripdata.csv
+2022-09-12 22:58:25.912 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202003-citibike-tripdata.csv
+[2022-09-12 13:58:25,920] {ssh.py:146} WARNING - 2022-09-12 22:58:25.912 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202004-citibike-tripdata.csv
+2022-09-12 22:58:25.912 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202005-citibike-tripdata.csv
+[2022-09-12 13:58:25,921] {ssh.py:146} WARNING - 2022-09-12 22:58:25.913 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202006-citibike-tripdata.csv
+2022-09-12 22:58:25.913 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202007-citibike-tripdata.csv
+2022-09-12 22:58:25.913 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202008-citibike-tripdata.csv
+2022-09-12 22:58:25.913 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202009-citibike-tripdata.csv
+[2022-09-12 13:58:25,925] {ssh.py:146} WARNING - 2022-09-12 22:58:25.913 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202010-citibike-tripdata.csv
+2022-09-12 22:58:25.913 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202011-citibike-tripdata.csv
+2022-09-12 22:58:25.913 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202012-citibike-tripdata.csv
+2022-09-12 22:58:25.914 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202101-citibike-tripdata.csv
+2022-09-12 22:58:25.914 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202102-citibike-tripdata.csv
+2022-09-12 22:58:25.914 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202103-citibike-tripdata.csv
+2022-09-12 22:58:25.915 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202104-citibike-tripdata.csv
+2022-09-12 22:58:25.915 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202105-citibike-tripdata.csv
+2022-09-12 22:58:25.915 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202106-citibike-tripdata.csv
+2022-09-12 22:58:25.915 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202107-citibike-tripdata.csv
+2022-09-12 22:58:25.915 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202108-citibike-tripdata.csv
+2022-09-12 22:58:25.915 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202109-citibike-tripdata.csv
+2022-09-12 22:58:25.916 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202110-citibike-tripdata.csv
+2022-09-12 22:58:25.916 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202111-citibike-tripdata.csv
+2022-09-12 22:58:25.916 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202112-citibike-tripdata.csv
+2022-09-12 22:58:25.916 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202201-citibike-tripdata.csv
+2022-09-12 22:58:25.916 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202202-citibike-tripdata.csv
+2022-09-12 22:58:25.917 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202203-citibike-tripdata.csv
+2022-09-12 22:58:25.917 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202204-citibike-tripdata.csv
+2022-09-12 22:58:25.917 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202205-citibike-tripdata.csv
+2022-09-12 22:58:25.917 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202206-citbike-tripdata.csv
+2022-09-12 22:58:25.917 | INFO     | __main__:<module>:310 - Датасет уже существует в БД: 202207-citbike-tripdata.csv
+[2022-09-12 13:58:25,928] {ssh.py:142} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 649983 entries, 0 to 649982
+Data columns (total 13 columns):
+ #   Column              Non-Null Count   Dtype  
+---  ------              --------------   -----  
+ 0   ride_id             649983 non-null  object 
+ 1   rideable_type       649983 non-null  object 
+ 2   started_at          649983 non-null  object 
+ 3   ended_at            649983 non-null  object 
+ 4   start_station_name  649983 non-null  object 
+ 5   start_station_id    649983 non-null  object 
+ 6   end_station_name    648651 non-null  object 
+ 7   end_station_id      648651 non-null  object 
+ 8   start_lat           649983 non-null  float64
+ 9   start_lng           649983 non-null  float64
+ 10  end_lat             648651 non-null  float64
+ 11  end_lng             648651 non-null  float64
+ 12  member_casual       649983 non-null  object 
+dtypes: float64(4), object(9)
+memory usage: 64.5+ MB
+[2022-09-12 13:58:25,928] {ssh.py:146} WARNING - Traceback (most recent call last):
+  File "C:\Users\nfrs\Documents\Jupyter\NetologyDiplom\trip_etl.py", line 308, in <module>
+    load_trip(row['csv'],index)
+  File "C:\Users\nfrs\Documents\Jupyter\NetologyDiplom\trip_etl.py", line 211, in load_trip
+    df = pd.read_csv('./files/csv/'+filename)
+  File "C:\Users\nfrs\anaconda3\lib\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\nfrs\anaconda3\lib\site-packages\pandas\io\parsers\readers.py", line 680, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\nfrs\anaconda3\lib\site-packages\pandas\io\parsers\readers.py", line 575, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\nfrs\anaconda3\lib\site-packages\pandas\io\parsers\readers.py", line 933, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\nfrs\anaconda3\lib\site-packages\pandas\io\parsers\readers.py", line 1217, in _make_engine
+    self.handles = get_handle(  # type: ignore[call-overload]
+  File "C:\Users\nfrs\anaconda3\lib\site-packages\pandas\io\common.py", line 789, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: './files/csv/202208-citibike-tripdata.csv'
+[2022-09-12 13:58:26,201] {ssh.py:142} INFO - 
+(base) nfrs@DESKTOP-FKD5HF9 C:\Users\nfrs\Documents\Jupyter\NetologyDiplom>pause
+[2022-09-12 13:58:26,201] {ssh.py:142} INFO - Press any key to continue . . . 
+[2022-09-12 13:58:26,222] {taskinstance.py:1192} INFO - Marking task as SUCCESS. dag_id=trip_etl, task_id=ssh_task, execution_date=20220912T135814, start_date=20220912T135815, end_date=20220912T135826
+[2022-09-12 13:58:26,241] {taskinstance.py:1246} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-09-12 13:58:26,254] {local_task_job.py:146} INFO - Task exited with return code 0
